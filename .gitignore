@@ -1,8 +1,6 @@
 # Demo project exclusion
 demo
-
-# Generated executable
-executable
+build
 
 # vscode
 .vscode

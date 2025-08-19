@@ -1,0 +1,6 @@
+#!/bin/bash
+valgrind --tool=callgrind build/bin/executable
+
+kcachegrind
+
+rm callgrind.out.*
