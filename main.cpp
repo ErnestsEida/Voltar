@@ -1,23 +1,10 @@
 #include <SFML/Graphics.hpp>
+#include "cookie_engine.hpp"
 
 using namespace sf;
 
 int main()
 {
-  auto window = RenderWindow(VideoMode({1920, 1080}), "CMake SFML Project");
-  window.setFramerateLimit(144);
-
-  while (window.isOpen())
-  {
-    while (const std::optional event = window.pollEvent())
-    {
-      if (event->is<Event::Closed>())
-      {
-        window.close();
-      }
-    }
-
-    window.clear();
-    window.display();
-  }
+  CookieEngine *engine = new CookieEngine();
+  engine->start();
 }

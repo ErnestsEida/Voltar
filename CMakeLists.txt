@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Important for static SFML
 set(SFML_STATIC_LIBRARIES ON)
 
+include_directories(${CMAKE_SOURCE_DIR}/includes)
 include(FetchContent)
 FetchContent_Declare(SFML
     GIT_REPOSITORY https://github.com/SFML/SFML.git
@@ -17,7 +18,10 @@ FetchContent_Declare(SFML
     SYSTEM)
 FetchContent_MakeAvailable(SFML)
 
-add_executable(executable main.cpp)
+
+add_executable(executable main.cpp
+    src/cookie_engine.cpp
+)
 
 # This defines SFML_STATIC for your project so headers behave correctly
 target_compile_definitions(executable PRIVATE SFML_STATIC)
