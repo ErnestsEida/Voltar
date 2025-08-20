@@ -17,9 +17,7 @@ CookieEngine is a **GAME ENGINE** made in C++ on top of SFML graphics library
 
 ### Linux
 
-```
-sudo apt-get install libsfml-dev
-```
+> Coming soon
 
 ### Windows
 
@@ -27,9 +25,7 @@ sudo apt-get install libsfml-dev
 
 ### MacOS
 
-```
-brew install sfml
-```
+> Coming soon
 
 ## Steps to test
 

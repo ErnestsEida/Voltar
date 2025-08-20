@@ -17,7 +17,7 @@ FetchContent_Declare(SFML
     SYSTEM)
 FetchContent_MakeAvailable(SFML)
 
-add_executable(executable src/main.cpp)
+add_executable(executable main.cpp)
 
 # This defines SFML_STATIC for your project so headers behave correctly
 target_compile_definitions(executable PRIVATE SFML_STATIC)
