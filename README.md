@@ -1,6 +1,6 @@
-# CookieEngine
+# Voltar
 
-CookieEngine is a **GAME ENGINE** made in C++ on top of SFML graphics library
+Voltar is a Game development framework, that uses SFML Graphics library as its core rendering library.
 
 ## Table of contents
 
@@ -10,7 +10,7 @@ CookieEngine is a **GAME ENGINE** made in C++ on top of SFML graphics library
    - [Windows](#windows)
    - [MacOS](#windows)
 
-2. [Steps to test](#steps-to-test)
+2. [Template Code](#template-code)
 3. [API](#api)
 
 ## Prerequisites
@@ -27,7 +27,7 @@ CookieEngine is a **GAME ENGINE** made in C++ on top of SFML graphics library
 
 > Coming soon
 
-## Steps to test
+## Template Code
 
 > Coming soon
 

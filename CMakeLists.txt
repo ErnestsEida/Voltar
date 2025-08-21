@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(CookieEngine)
+project(Voltar)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_CXX_STANDARD 23)
@@ -20,7 +20,8 @@ FetchContent_MakeAvailable(SFML)
 
 
 add_executable(executable main.cpp
-    src/cookie_engine.cpp
+    src/voltar/core.cpp
+    src/voltar/logger.cpp
 )
 
 # This defines SFML_STATIC for your project so headers behave correctly
