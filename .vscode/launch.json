@@ -1,0 +1,15 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "[WINDOWS] Compile and run",
+      "type": "cppvsdbg",
+      "request": "launch",
+      "program": "C:\\Windows\\System32\\cmd.exe",
+      "args": ["/c", "${workspaceFolder}\\bin\\windows\\run.bat"],
+      "stopAtEntry": false,
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    }
+  ]
+}

@@ -6,6 +6,6 @@ using namespace sf;
 
 int main()
 {
-  Voltar::Core *e = new Voltar::Core();
-  e->start();
+  Voltar::Core e("Template Window", {1280, 720}, false, 144);
+  e.start();
 }

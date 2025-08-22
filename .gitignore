@@ -2,8 +2,5 @@
 demo
 build
 
-# vscode
-.vscode
-
 # debuggin/profiling stuff
 callgrind.*

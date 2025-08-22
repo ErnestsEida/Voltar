@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "*.rb": "ruby",
+    "map": "cpp",
+    "iostream": "cpp"
+  }
+}
