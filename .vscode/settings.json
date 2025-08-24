@@ -2,6 +2,10 @@
   "files.associations": {
     "*.rb": "ruby",
     "map": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "xlocale": "cpp",
+    "vector": "cpp",
+    "xstring": "cpp",
+    "stdexcept": "cpp"
   }
 }

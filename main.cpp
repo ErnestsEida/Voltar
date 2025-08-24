@@ -1,6 +1,5 @@
 #include <SFML/Graphics.hpp>
 #include <voltar/core.hpp>
-#include <voltar/logger.hpp>
 
 using namespace sf;
 

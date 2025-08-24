@@ -4,9 +4,6 @@
 Voltar::Core *Voltar::Core::singleton = nullptr;
 float Voltar::Core::deltaTime = 0.0f;
 
-/**
- * Takes initial window parameters and uses them to create the main RenderWindow instance
- */
 Voltar::Core::Core(string window_title, Vector2u window_size, bool fullscreen, int framerate, ContextSettings opengl_settings)
 {
   this->window = RenderWindow(
@@ -19,13 +16,11 @@ Voltar::Core::Core(string window_title, Vector2u window_size, bool fullscreen, i
   this->window_framerate = framerate;
   this->window_title = window_title;
 
+  // this->scene_manager = Voltar::Internal::SceneManager(&this->instances);
+
   this->assign_singleton(this);
 }
 
-/**
- * Assigns value to the static singleton variable.
- * Used within Voltar::Core constructors.
- */
 void Voltar::Core::assign_singleton(Voltar::Core *instance)
 {
   if (singleton == nullptr)
@@ -38,10 +33,6 @@ void Voltar::Core::assign_singleton(Voltar::Core *instance)
   }
 }
 
-/**
- * Set fullscreen state for current window
- * @param enabled whether fullscreen is enabled or not
- */
 void Voltar::Core::window_set_fullscreen(bool enabled)
 {
   this->window = RenderWindow(
@@ -51,9 +42,6 @@ void Voltar::Core::window_set_fullscreen(bool enabled)
       this->window.getSettings());
 }
 
-/**
- * Starts execution of the engine.
- */
 void Voltar::Core::start()
 {
   while (window.isOpen())
