@@ -5,6 +5,7 @@
 #include <iostream>
 
 #include <voltar/internal/scene_manager.hpp>
+#include <voltar/internal/instance_manager.hpp>
 
 using namespace sf;
 using namespace std;
@@ -24,13 +25,21 @@ namespace Voltar
     RenderWindow window;
 
     vector<Voltar::Instance *> instances;
-    Voltar::Internal::SceneManager scene_manager = Voltar::Internal::SceneManager(&this->instances);
+    Voltar::Internal::SceneManager scene_manager;
+    Voltar::Internal::InstanceManager instance_manager;
+
+    void initialize_managers();
 
     /**
      * Assigns value to the static singleton variable.
      * Used within Voltar::Core constructors.
      */
     void assign_singleton(Voltar::Core *instance);
+
+    /**
+     * Called within `start()` and runs single time before entering the engine mainloop
+     */
+    void boot_sequence();
 
   public:
     /**

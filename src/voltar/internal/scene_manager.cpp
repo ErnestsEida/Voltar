@@ -15,6 +15,8 @@ void Voltar::Internal::SceneManager::set_scene_mapping(SceneMapping mapping)
   Voltar::Internal::SceneManager::is_mapping_set = true;
 }
 
+Voltar::Internal::SceneManager::SceneManager() {}
+
 Voltar::Internal::SceneManager::SceneManager(vector<Voltar::Instance *> *instance_holder_ptr)
 {
   this->instance_holder = instance_holder_ptr;
@@ -29,12 +31,13 @@ vector<Voltar::Instance *> Voltar::Internal::SceneManager::load_scene(string sce
 
   try
   {
-    Scene *target_scene = &scene_mapping.at(scene_name);
+    Scene *target_scene = scene_mapping.at(scene_name);
     this->loaded_scene = target_scene;
     return this->loaded_scene->get_scene_instances();
   }
   catch (out_of_range &e)
   {
     Logger::Error("Scene '" + scene_name + "' not defined in the scene mapping");
+    return vector<Voltar::Instance *>();
   }
 }

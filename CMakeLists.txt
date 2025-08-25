@@ -25,6 +25,7 @@ add_executable(executable main.cpp
     src/voltar/core/scene.cpp
     src/voltar/core/instance.cpp
     src/voltar/internal/scene_manager.cpp
+    src/voltar/internal/instance_manager.cpp
 )
 
 # This defines SFML_STATIC for your project so headers behave correctly

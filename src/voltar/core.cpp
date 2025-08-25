@@ -4,8 +4,16 @@
 Voltar::Core *Voltar::Core::singleton = nullptr;
 float Voltar::Core::deltaTime = 0.0f;
 
+void Voltar::Core::initialize_managers()
+{
+  this->scene_manager = Voltar::Internal::SceneManager(&this->instances);
+  this->instance_manager = Voltar::Internal::InstanceManager(&this->instances);
+}
+
 Voltar::Core::Core(string window_title, Vector2u window_size, bool fullscreen, int framerate, ContextSettings opengl_settings)
 {
+  this->initialize_managers();
+
   this->window = RenderWindow(
       VideoMode(window_size),
       window_title,
@@ -15,8 +23,6 @@ Voltar::Core::Core(string window_title, Vector2u window_size, bool fullscreen, i
   this->window.setFramerateLimit(framerate);
   this->window_framerate = framerate;
   this->window_title = window_title;
-
-  // this->scene_manager = Voltar::Internal::SceneManager(&this->instances);
 
   this->assign_singleton(this);
 }
@@ -42,14 +48,22 @@ void Voltar::Core::window_set_fullscreen(bool enabled)
       this->window.getSettings());
 }
 
+void Voltar::Core::boot_sequence()
+{
+  this->instances = this->scene_manager.load_scene(MAIN_SCENE_KEY);
+}
+
 void Voltar::Core::start()
 {
+  this->boot_sequence();
+
   while (window.isOpen())
   {
+    // Setting deltaTime
+    Voltar::Core::deltaTime = this->sf_clock.restart().asSeconds();
+
     while (const std::optional event = window.pollEvent())
     {
-      Voltar::Core::deltaTime = this->sf_clock.restart().asSeconds();
-
       if (event->is<Event::Closed>())
       {
         window.close();

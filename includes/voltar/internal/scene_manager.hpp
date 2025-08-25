@@ -5,6 +5,8 @@
 #include <string>
 #include <map>
 
+typedef map<string, Voltar::Scene *> SceneMapping;
+
 namespace Voltar
 {
   namespace Internal
@@ -38,7 +40,5 @@ namespace Voltar
     };
   };
 };
-
-typedef map<string, Voltar::Scene> SceneMapping;
 
 #endif
