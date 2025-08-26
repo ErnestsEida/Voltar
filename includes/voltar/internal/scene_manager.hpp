@@ -36,7 +36,7 @@ namespace Voltar
        * [PUBLIC]
        * Use this method to change scenes for your game.
        */
-      vector<Instance *> load_scene(string scene_name);
+      void load_scene(string scene_name);
     };
   };
 };

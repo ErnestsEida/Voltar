@@ -17,7 +17,7 @@ namespace Voltar
   public:
     vector<Instance *> persisted_instances;
 
-    Scene();
+    Scene(bool persistant = false);
 
     /**
      * [INTERNAL]

@@ -5,6 +5,9 @@ using namespace sf;
 
 class TemplateScene : public Voltar::Scene
 {
+public:
+  TemplateScene() : Voltar::Scene() {}
+
   vector<Voltar::Instance *> build_scene_instances()
   {
     return vector<Voltar::Instance *>{

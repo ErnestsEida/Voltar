@@ -68,6 +68,14 @@ namespace Voltar
      */
     virtual void after_tick() {};
 
+    /**
+     * [OVERRIDE] [Optional]
+     * Executed before destroyed.
+     * When a persistant `Scene` is changed from, the objects are not destroyed(aka destructor is not called)
+     * So this can be used to perform some actions within game comtext, before the scene is unloaded and objects are stored away.
+     */
+    virtual void before_unload() {};
+
     virtual ~Instance();
   };
 };

@@ -6,6 +6,7 @@
 
 #include <voltar/internal/scene_manager.hpp>
 #include <voltar/internal/instance_manager.hpp>
+#include <voltar/internal/window_manager.hpp>
 
 using namespace sf;
 using namespace std;
@@ -27,6 +28,7 @@ namespace Voltar
     vector<Voltar::Instance *> instances;
     Voltar::Internal::SceneManager scene_manager;
     Voltar::Internal::InstanceManager instance_manager;
+    Voltar::Internal::WindowManager window_manager;
 
     void initialize_managers();
 

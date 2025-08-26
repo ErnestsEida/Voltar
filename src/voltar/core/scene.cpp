@@ -3,7 +3,7 @@
 
 using namespace Voltar;
 
-Scene::Scene() {}
+Scene::Scene(bool persistant) : persistant(persistant) {}
 
 vector<Instance *> Scene::get_scene_instances()
 {

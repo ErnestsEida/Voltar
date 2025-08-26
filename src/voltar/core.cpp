@@ -14,6 +14,7 @@ Voltar::Core::Core(string window_title, Vector2u window_size, bool fullscreen, i
 {
   this->initialize_managers();
 
+  // TODO: Replace with `WindowManager`
   this->window = RenderWindow(
       VideoMode(window_size),
       window_title,
@@ -50,7 +51,7 @@ void Voltar::Core::window_set_fullscreen(bool enabled)
 
 void Voltar::Core::boot_sequence()
 {
-  this->instances = this->scene_manager.load_scene(MAIN_SCENE_KEY);
+  this->scene_manager.load_scene(MAIN_SCENE_KEY);
 }
 
 void Voltar::Core::start()
